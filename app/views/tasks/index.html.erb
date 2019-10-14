@@ -1,6 +1,8 @@
-<h1>タスク一覧</h1>
+<div class="text-center">
+  <h1>タスク一覧</h1>
+</div>
 
-<% if @tasks.any? %>
+<% if logged_in? %>
 
   <table class="table table-striped">
     <thead>
@@ -25,5 +27,8 @@
    <%= paginate @tasks %>
   </div>
 <% end %>
-
-<%= link_to 'タスクの投稿', toukou_path_url, class: "btn btn-primart" %>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+<%= link_to 'タスクの投稿', new_path, class: "btn btn-primary btn-block" %>
+  </div>
+</div>

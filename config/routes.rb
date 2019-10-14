@@ -2,17 +2,17 @@ Rails.application.routes.draw do
     
     
     
-    root to: 'tasks#index'
+  root to: 'tasks#index'
     
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  get 'toukou_path', to: 'tasks#new'
+  get 'new', to: 'tasks#new'
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create]
+  resources :users, only: [:new, :create]
 
-  resources :tasks, only: [:create, :destroy]
+  resources :tasks
 end
 
 
